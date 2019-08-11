@@ -19,7 +19,7 @@
        created() {
            axios.get('/tasks').then(response => this.tasks = response.data);
 
-           window.Echo.channel('tasks')
+           window.Echo.private('tasks.1')
             .listen('TaskCreated', ({task}) => this.tasks.push(task.body));
        },
 

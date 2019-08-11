@@ -28,3 +28,7 @@ Route::post('/tasks', function(){
 
     event((new TaskCreated($task)));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
