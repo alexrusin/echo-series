@@ -34,6 +34,6 @@ class TaskCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('tasks.' . auth()-id());
+        return new PrivateChannel('tasks.' . auth()->id());
     }
 }

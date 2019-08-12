@@ -1729,6 +1729,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['userId'],
   data: function data() {
     return {
       tasks: [],
@@ -1741,7 +1742,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/tasks').then(function (response) {
       return _this.tasks = response.data;
     });
-    window.Echo["private"]('tasks.1').listen('TaskCreated', function (_ref) {
+    window.Echo["private"]("tasks.".concat(this.userId)).listen('TaskCreated', function (_ref) {
       var task = _ref.task;
       return _this.tasks.push(task.body);
     });

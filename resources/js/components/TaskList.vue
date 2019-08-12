@@ -9,6 +9,7 @@
 
 <script>
     export default {
+        props: ['userId'],
        data() {
            return {
                tasks: [],
@@ -19,7 +20,7 @@
        created() {
            axios.get('/tasks').then(response => this.tasks = response.data);
 
-           window.Echo.private('tasks.1')
+           window.Echo.private(`tasks.${this.userId}`)
             .listen('TaskCreated', ({task}) => this.tasks.push(task.body));
        },
 

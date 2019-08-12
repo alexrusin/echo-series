@@ -66,7 +66,7 @@
     </head>
     <body>
         <div id="app" class="flex-center position-ref full-height">
-            <task-list></task-list>
+            <task-list :user-id="{{auth()->id()}}"></task-list>
         </div>
         <script src="/js/app.js"></script>
     </body>
